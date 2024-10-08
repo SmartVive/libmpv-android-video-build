@@ -11,6 +11,7 @@ v_harfbuzz=7.2.0
 v_fribidi=1.0.12
 v_freetype=2-13-0
 v_mbedtls=3.4.0
+v_libplacebo=5.264.1
 v_dav1d=1.2.0
 v_libxml2=2.10.3
 v_ffmpeg=6.0
@@ -36,9 +37,10 @@ dep_fribidi=()
 dep_harfbuzz=()
 dep_libass=(freetype fribidi harfbuzz)
 dep_lua=()
+dep_libplacebo=()
 dep_shaderc=()
 if [ -n "$ENCODERS_GPL" ]; then
-	dep_mpv=(ffmpeg libass fftools_ffi)
+	dep_mpv=(ffmpeg libass fftools_ffi libplacebo)
 else
-	dep_mpv=(ffmpeg libass)
+	dep_mpv=(ffmpeg libass libplacebo)
 fi
