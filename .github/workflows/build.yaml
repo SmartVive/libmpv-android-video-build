@@ -20,10 +20,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3.3.0
       - name: Setup Java JDK
-        uses: actions/setup-java@v3.9.0
+        uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 11
+          java-version: 17
       - name: Setup Flutter SDK
         uses: subosito/flutter-action@v1
         with:
@@ -50,11 +50,11 @@ jobs:
         run: |
           sudo chmod +x bundle_full.sh
           ./bundle_full.sh
-      - name: Bundle (encoders-gpl)
-        working-directory: ./buildscripts
-        run: |
-          sudo chmod +x bundle_encoders-gpl.sh
-          ./bundle_encoders-gpl.sh
+      #- name: Bundle (encoders-gpl)
+      #  working-directory: ./buildscripts
+      #  run: |
+      #    sudo chmod +x bundle_encoders-gpl.sh
+      #    ./bundle_encoders-gpl.sh
       - uses: actions/upload-artifact@v3.1.2
         with:
           name: artifact
