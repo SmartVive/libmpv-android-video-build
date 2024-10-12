@@ -58,7 +58,17 @@ HEREDOC
 # media-kit-android-helper
 [ ! -d media-kit-android-helper ] && git clone --depth 1 --branch fix/no-dup-fd https://github.com/media-kit/media-kit-android-helper.git
 
+# lua
+if [ ! -d lua ]; then
+	mkdir lua
+	$WGET http://www.lua.org/ftp/lua-$v_lua.tar.gz -O - | \
+		tar -xz -C lua --strip-components=1
+fi
+
+# libplacebo
+[ ! -d libplacebo ] && git clone --depth 1 --branch v$v_libplacebo --recursive https://code.videolan.org/videolan/libplacebo.git libplacebo
+
 # media_kit
-[ ! -d media_kit ] && git clone --depth 1 --single-branch --branch main https://github.com/alexmercerind/media_kit.git
+[ ! -d media_kit ] && git clone https://github.com/alexmercerind/media_kit.git media_kit && cd media_kit && git reset --hard 264a54f23e6e0b0c564800de39f547b074f1b28a && cd ..
 
 cd ..
