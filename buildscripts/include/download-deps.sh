@@ -49,6 +49,13 @@ Shaderc sources are provided by the NDK.
 see <ndk>/sources/third_party/shaderc
 HEREDOC
 
+# lua
+if [ ! -d lua ]; then
+	mkdir lua
+	$WGET http://www.lua.org/ftp/lua-$v_lua.tar.gz -O - | \
+		tar -xz -C lua --strip-components=1
+fi
+
 # libplacebo
 [ ! -d libplacebo ] && git clone --depth 1 --branch v$v_libplacebo --recurse-submodules https://code.videolan.org/videolan/libplacebo.git libplacebo
 

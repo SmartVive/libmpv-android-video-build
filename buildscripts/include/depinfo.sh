@@ -13,12 +13,13 @@ v_freetype=2-13-2
 v_mbedtls=3.6.1
 v_libplacebo=7.349.0
 v_dav1d=1.4.3
-v_libxml2=2.10.3
+v_libxml2=2.12.9
 v_ffmpeg=7.1
 v_mpv=0.39.0
 v_libogg=1.3.5
 v_libvorbis=1.3.7
-v_libvpx=1.13
+v_libvpx=1.14
+v_lua=5.2.4
 
 
 ## Dependency tree
@@ -40,7 +41,7 @@ dep_lua=()
 dep_libplacebo=()
 dep_shaderc=()
 if [ -n "$ENCODERS_GPL" ]; then
-	dep_mpv=(ffmpeg libass fftools_ffi libplacebo)
+	dep_mpv=(ffmpeg libass fftools_ffi libplacebo lua)
 else
-	dep_mpv=(ffmpeg libass libplacebo)
+	dep_mpv=(ffmpeg libass libplacebo lua)
 fi
