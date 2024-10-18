@@ -14,13 +14,9 @@ else
 	exit 255
 fi
 
-cp ../../scripts/libx264.build meson.build
-
 unset CC CXX # meson wants these unset
 
-mkdir $build
+meson setup $build --cross-file "$prefix_dir"/crossfile.txt
 
-meson setup $build --cross-file "$prefix_dir"/crossfile.txt --prefix="$prefix_dir"
-
-meson compile -C $build libx264
-meson install -C $build
+ninja -C $build -j$cores
+DESTDIR="$prefix_dir" ninja -C $build install

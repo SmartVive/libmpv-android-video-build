@@ -9,7 +9,7 @@ configure_options = [
     '--disable-shared',
     '--enable-static',
     '--disable-cli',
-    '--enable-pic'
+    '--enable-pic',
 ]
 
 if host_machine.cpu() == 'i686'
