@@ -19,7 +19,7 @@ mkdir -p deps && cd deps
 [ ! -d libogg ] && $WGET https://github.com/xiph/ogg/releases/download/v${v_libogg}/libogg-${v_libogg}.tar.gz && tar -xf libogg-${v_libogg}.tar.gz && mv libogg-${v_libogg} libogg && rm libogg-${v_libogg}.tar.gz && cd libogg && $WGET -O config.sub https://git.savannah.gnu.org/cgit/config.git/plain/config.sub && $WGET -O config.guess https://git.savannah.gnu.org/cgit/config.git/plain/config.guess && cd ..
 
 # libvorbis
-[ ! -d libvorbis ] && $WGET https://github.com/xiph/vorbis/releases/download/v${v_libvorbis}/libvorbis-${v_libvorbis}.tar.gz && tar -xf libvorbis-${v_libvorbis}.tar.gz && mv libvorbis-${v_libvorbis} libvorbis && rm libvorbis-${v_libvorbis}.tar.gz
+[ ! -d libvorbis ] && $WGET https://github.com/xiph/vorbis/releases/download/v${v_libvorbis}/libvorbis-${v_libvorbis}.tar.gz && tar -xf libvorbis-${v_libvorbis}.tar.gz && mv libvorbis-${v_libvorbis} libvorbis && rm libvorbis-${v_libvorbis}.tar.gz && cd libvorbis && $WGET -O config.sub https://git.savannah.gnu.org/cgit/config.git/plain/config.sub && $WGET -O config.guess https://git.savannah.gnu.org/cgit/config.git/plain/config.guess && cd ..
 
 # libvpx
 [ ! -d libvpx ] && git clone --depth 1 --branch meson-$v_libvpx https://gitlab.freedesktop.org/gstreamer/meson-ports/libvpx.git
