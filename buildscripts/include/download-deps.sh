@@ -25,7 +25,7 @@ mkdir -p deps && cd deps
 [ ! -d libvpx ] && git clone --depth 1 --branch meson-$v_libvpx https://gitlab.freedesktop.org/gstreamer/meson-ports/libvpx.git
 
 # libx264
-[ ! -d libx264 ] && git clone --depth 1 https://code.videolan.org/videolan/x264.git --branch master libx264 && cd libx264 && $WGET -O config.sub https://git.savannah.gnu.org/cgit/config.git/plain/config.sub && $WGET -O config.guess https://git.savannah.gnu.org/cgit/config.git/plain/config.guess && cd ..
+[ ! -d libx264 ] && git clone --depth 1 https://code.videolan.org/videolan/x264.git --branch master libx264 && ls && cd libx264 && $WGET -O config.sub https://git.savannah.gnu.org/cgit/config.git/plain/config.sub && $WGET -O config.guess https://git.savannah.gnu.org/cgit/config.git/plain/config.guess && ls && cd ..
 
 # ffmpeg
 [ ! -d ffmpeg ] && git clone --depth 1 --branch n$v_ffmpeg https://github.com/FFmpeg/FFmpeg.git ffmpeg
