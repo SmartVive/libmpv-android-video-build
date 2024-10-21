@@ -16,6 +16,11 @@ fi
 
 cp ../../scripts/libx264.build meson.build
 
+# 打印 crossfile.txt 内容
+echo "Printing crossfile.txt contents:"
+cat "$prefix_dir/crossfile.txt"
+echo "End of crossfile.txt"
+
 unset CC CXX # meson wants these unset
 
 mkdir $build

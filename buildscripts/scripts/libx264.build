@@ -9,7 +9,7 @@ configure_options = [
     '--disable-shared',
     '--enable-static',
     '--disable-cli',
-    '--enable-pic'
+    '--enable-pic',
 ]
 
 if host_machine.cpu() == 'i686'
@@ -19,6 +19,9 @@ endif
 
 p = mod.add_project('configure',
     configure_options : configure_options,
+    cross_configure_options : [
+        '--host=arm-linux-androideabi',
+    ],
     verbose: true
 )
 
